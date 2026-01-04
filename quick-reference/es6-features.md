@@ -380,7 +380,7 @@ class BankAccount {
   }
 }
 
-const account = new Bank Account();
+const account = new BankAccount();
 account.deposit(100);
 console.log(account.getBalance());  // 100
 // console.log(account.#balance);   // SyntaxError!

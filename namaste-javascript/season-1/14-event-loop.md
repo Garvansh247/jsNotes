@@ -350,10 +350,10 @@ Timeout 2
 1. `Start`, `End` → Call Stack
 2. `Promise 1` → Microtask Queue (executes)
 3. `Promise 2` → Microtask Queue (executes immediately)
-4. `Timeout 1` → Callback Queue (waits)
-5. `Timeout 3` → Callback Queue (waits)
-6. `Timeout 2` → Callback Queue (added after Promise 1)
-7. Timeouts execute in order: 1, 3, 2
+4. `Timeout 1` → Callback Queue (waiting from start)
+5. `Timeout 3` → Callback Queue (waiting from start)
+6. After microtasks complete, `Timeout 2` is added to Callback Queue
+7. Timeouts execute in order they were queued: 1, 3, 2
 
 ---
 
