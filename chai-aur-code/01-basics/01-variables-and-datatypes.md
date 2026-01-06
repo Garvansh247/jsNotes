@@ -14,7 +14,20 @@
 
 ## Variables in JavaScript
 
-Variables are containers for storing data values. JavaScript provides three ways to declare variables:
+
+The Temporal Dead Zone (TDZ) in JavaScript is the period between entering a variable's scope and the point where the variable's declaration and initialization are processed by the code execution. This concept applies to variables declared with let and const, not var. 
+How it Works
+Variables declared with let and const are hoisted to the top of their block scope, but, unlike var, they are not assigned an initial value (undefined). Instead, they remain in an "uninitialized" state in a separate memory space. 
+Any attempt to access a variable while it is in the TDZ will result in a ReferenceError. The variable is only accessible after the JavaScript engine reaches the line where it is declared and initialized with a value. 
+TDZ vs. var
+The key difference lies in how different declaration keywords handle hoisting and initialization: 
+Feature 	let and const (TDZ)	var
+Hoisted?	Yes, to the top of their block scope.	Yes, to the top of their function/global scope.
+Initialized?	No, they remain uninitialized until the declaration is reached.	Yes, automatically initialized to undefined.
+Access Before Declaration?	Throws a ReferenceError.	Returns undefined.
+Variables are containers for storing data values. 
+
+JavaScript provides three ways to declare variables:
 
 ### var (Old way - avoid in modern code)
 
